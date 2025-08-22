@@ -35,7 +35,7 @@ if (productsInCart) {
                     <p>$${producto.precio * producto.cantidad}</p>
                 </div>
                 <button class="carrito-producto-eliminar" id="${
-                  producto.id
+                  product.id
                 }"><i class="bi bi-trash-fill"></i></button>
             `;
   });

@@ -91,14 +91,23 @@ btnCategory.forEach((boton) => {
 });
 
 function refreshBtnAdd() {
-  addBtn = document.querySelector(".product-add");
+  addBtn = document.querySelectorAll(".product-add");
 
   addBtn.forEach((boton) => {
     boton.addEventListener("click", addCart);
   });
 }
 
-const productsInCart = [];
+let productsInCart;
+
+let productsInCartLS = localStorage.getItem("products-in-cart");
+
+if (productsInCartLS) {
+  productsInCart = JSON.parse(productsInCartLS);
+  refreshNumber();
+} else {
+  productsInCart = [];
+}
 
 function addCart(e) {
   const idBtn = e.currentTarget.id;
